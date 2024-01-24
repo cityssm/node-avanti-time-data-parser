@@ -1,0 +1,37 @@
+{
+  "name": "@cityssm/avanti-time-data-parser",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Parses the time data Excel report from Avanti into a JavaScript object.",
+  "exports": "./index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "mocha --timeout 60000",
+    "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary mocha --timeout 60000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cityssm/node-avanti-time-data-parser.git"
+  },
+  "keywords": [
+    "avanti",
+    "payroll",
+    "parser"
+  ],
+  "author": "The Corporation of the City of Sault Ste. Marie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cityssm/node-avanti-time-data-parser/issues"
+  },
+  "homepage": "https://github.com/cityssm/node-avanti-time-data-parser#readme",
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.5",
+    "eslint-config-cityssm": "^1.4.0"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
