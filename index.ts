@@ -26,8 +26,8 @@ function parseTimeDataSheet(worksheet: XLSX.WorkSheet): {
   })
 
   const timeData: Record<string, TimeDataEmployee> = {}
-  let dateMin: TimeDataDateString | undefined
-  let dateMax: TimeDataDateString | undefined
+  let dateMin: TimeDataDateString | '' = ''
+  let dateMax: TimeDataDateString | '' = ''
 
   for (const row of rows) {
     if (row.EmpNo === undefined || row.Code === undefined) {
@@ -58,11 +58,11 @@ function parseTimeDataSheet(worksheet: XLSX.WorkSheet): {
 
       payCode.hours[dateString] = hours
 
-      if (dateMin === undefined || dateMin > dateString) {
+      if (dateMin === '' || dateMin > dateString) {
         dateMin = dateString
       }
 
-      if (dateMax === undefined || dateMax < dateString) {
+      if (dateMax === '' || dateMax < dateString) {
         dateMax = dateString
       }
     }
@@ -72,8 +72,8 @@ function parseTimeDataSheet(worksheet: XLSX.WorkSheet): {
 
   return {
     timeData,
-    dateMin,
-    dateMax
+    dateMin: dateMin === '' ? undefined : dateMin,
+    dateMax: dateMax === '' ? undefined : dateMax
   }
 }
 

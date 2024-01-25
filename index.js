@@ -10,8 +10,8 @@ function parseTimeDataSheet(worksheet) {
         rawNumbers: true
     });
     const timeData = {};
-    let dateMin;
-    let dateMax;
+    let dateMin = '';
+    let dateMax = '';
     for (const row of rows) {
         if (row.EmpNo === undefined || row.Code === undefined) {
             continue;
@@ -35,10 +35,10 @@ function parseTimeDataSheet(worksheet) {
             const dateString = formatDate(columnName);
             const hours = Number.parseFloat(columnValue);
             payCode.hours[dateString] = hours;
-            if (dateMin === undefined || dateMin > dateString) {
+            if (dateMin === '' || dateMin > dateString) {
                 dateMin = dateString;
             }
-            if (dateMax === undefined || dateMax < dateString) {
+            if (dateMax === '' || dateMax < dateString) {
                 dateMax = dateString;
             }
         }
@@ -46,8 +46,8 @@ function parseTimeDataSheet(worksheet) {
     }
     return {
         timeData,
-        dateMin,
-        dateMax
+        dateMin: dateMin === '' ? undefined : dateMin,
+        dateMax: dateMax === '' ? undefined : dateMax
     };
 }
 /**
