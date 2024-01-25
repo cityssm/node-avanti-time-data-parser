@@ -1,5 +1,11 @@
 # node-avanti-time-data-parser
 
+[![npm (scoped)](https://img.shields.io/npm/v/%40cityssm/avanti-time-data-parser)](https://www.npmjs.com/package/@cityssm/avanti-time-data-parser)
+[![DeepSource](https://app.deepsource.com/gh/cityssm/node-avanti-time-data-parser.svg/?label=active+issues&show_trend=true&token=wRt7Ndp1zquLCKeUyP1gDZLL)](https://app.deepsource.com/gh/cityssm/node-avanti-time-data-parser/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5d5941f60f29d0d4d952/maintainability)](https://codeclimate.com/github/cityssm/node-avanti-time-data-parser/maintainability)
+[![codecov](https://codecov.io/gh/cityssm/node-avanti-time-data-parser/graph/badge.svg?token=PR322WWMI9)](https://codecov.io/gh/cityssm/node-avanti-time-data-parser)
+[![Coverage Testing](https://github.com/cityssm/node-avanti-time-data-parser/actions/workflows/coverage.yml/badge.svg)](https://github.com/cityssm/node-avanti-time-data-parser/actions/workflows/coverage.yml)
+
 Parses the time data Excel report from Avanti into a JavaScript object.
 
 Helpful when building an external process for supervisors to approve time entered
