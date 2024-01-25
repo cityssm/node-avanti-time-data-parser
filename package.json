@@ -28,7 +28,7 @@
   "homepage": "https://github.com/cityssm/node-avanti-time-data-parser#readme",
   "devDependencies": {
     "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.5",
+    "@types/node": "^20.11.6",
     "eslint-config-cityssm": "^1.4.0"
   },
   "dependencies": {
