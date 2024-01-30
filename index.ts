@@ -1,6 +1,8 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable security/detect-object-injection */
 
+import fs from 'node:fs'
+
 import XLSX from 'xlsx'
 
 import type {
@@ -11,6 +13,8 @@ import type {
 } from './types.js'
 import { dateColumnRegularExpression, formatDate } from './utilities.js'
 import type { WorkSheetRow } from './workSheetTypes.js'
+
+XLSX.set_fs(fs)
 
 const timeDataSheetName = 'Time Data'
 const approvedTimeDataSheetName = 'Approved Time Data'
