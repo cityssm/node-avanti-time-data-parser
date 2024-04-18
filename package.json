@@ -1,6 +1,6 @@
 {
   "name": "@cityssm/avanti-time-data-parser",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "Parses the time data Excel report from Avanti into a JavaScript object.",
   "exports": "./index.js",
