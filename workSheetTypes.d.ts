@@ -1,17 +1,20 @@
+type DayOfWeek = 'Sun' | 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat';
+type MonthOfYear = 'Jan' | 'Feb' | 'Mar' | 'Apr' | 'May' | 'Jun' | 'Jul' | 'Aug' | 'Sep' | 'Oct' | 'Nov' | 'Dec';
+export type DateColumn = `${DayOfWeek} ${number}-${MonthOfYear}-${number}`;
 export type WorkSheetRow = WorkSheetEmployeeRecordRow | WorkSheetEmployeeSummaryRow | WorkSheetFooterSummaryRow;
 interface WorkSheetEmployeeRecordRow {
     EmpNo: string;
     Name: string;
     Code: string;
     Description: string;
-    [columnDate: `${string} ${number}-${string}-${number}`]: `${number}`;
+    [columnDate: DateColumn]: `${number}`;
     'Total Hours': `${number}`;
 }
 interface WorkSheetEmployeeSummaryRow {
     EmpNo: string;
     Code: undefined;
     Name: 'Total service worked:' | 'Processed' | 'Approved' | 'In a batch' | string;
-    [columnDate: `${string} ${number}-${string}-${number}`]: string;
+    [columnDate: DateColumn]: string;
     'Total Hours'?: string;
 }
 interface WorkSheetFooterSummaryRow {
@@ -19,7 +22,7 @@ interface WorkSheetFooterSummaryRow {
     Name: 'Total Hours:' | 'Grand Total Service Hours:' | string;
     Code?: string;
     Description?: string;
-    [columnDate: `${string} ${number}-${string}-${number}`]: `${number}`;
+    [columnDate: DateColumn]: `${number}`;
     'Total Hours': `${number}`;
 }
 export {};

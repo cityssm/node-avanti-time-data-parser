@@ -11,7 +11,7 @@ import type {
   TimeDataEmployee,
   TimeDataPayCode
 } from './types.js'
-import { dateColumnRegularExpression, formatDate } from './utilities.js'
+import { dateColumnRegularExpression, formatDate, isDateColumn } from './utilities.js'
 import type { WorkSheetRow } from './workSheetTypes.js'
 
 XLSX.set_fs(fs)
@@ -53,7 +53,7 @@ function parseTimeDataSheet(worksheet: XLSX.WorkSheet): {
     }
 
     for (const [columnName, columnValue] of Object.entries(row)) {
-      if (!dateColumnRegularExpression.test(columnName)) {
+      if (!isDateColumn(columnName)) {
         continue
       }
 

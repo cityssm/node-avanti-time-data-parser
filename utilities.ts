@@ -1,6 +1,7 @@
 import type { TimeDataDateString } from './types.js'
+import { type DateColumn } from './workSheetTypes.js'
 
-export const dateColumnRegularExpression = /^\w{3} \d/
+const dateColumnRegularExpression = /^\w{3} \d/
 
 const monthNumbers = {
   Jan: '01',
@@ -18,11 +19,20 @@ const monthNumbers = {
 }
 
 /**
+ * Tests if a column name is a date column.
+ * @param {string} columnName - A column name
+ * @returns {boolean} - True when the column name is a date column.
+ */
+export function isDateColumn(columnName: string): columnName is DateColumn {
+  return dateColumnRegularExpression.test(columnName)
+}
+
+/**
  * Formats a date column name.
- * @param {string} columnName - ex. 'Tue 16-Jan-2024'
+ * @param {DateColumn} columnName - ex. 'Tue 16-Jan-2024'
  * @returns {TimeDataDateString} ex. '2024/01/16'
  */
-export function formatDate(columnName: string): TimeDataDateString {
+export function formatDate(columnName: DateColumn): TimeDataDateString {
   const datePieces = columnName.slice(4).split('-')
 
   return `${datePieces[2]}/${

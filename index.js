@@ -2,7 +2,7 @@
 /* eslint-disable security/detect-object-injection */
 import fs from 'node:fs';
 import XLSX from 'xlsx';
-import { dateColumnRegularExpression, formatDate } from './utilities.js';
+import { formatDate, isDateColumn } from './utilities.js';
 XLSX.set_fs(fs);
 const timeDataSheetName = 'Time Data';
 const approvedTimeDataSheetName = 'Approved Time Data';
@@ -31,7 +31,7 @@ function parseTimeDataSheet(worksheet) {
             hours: {}
         };
         for (const [columnName, columnValue] of Object.entries(row)) {
-            if (!dateColumnRegularExpression.test(columnName)) {
+            if (!isDateColumn(columnName)) {
                 continue;
             }
             const dateString = formatDate(columnName);

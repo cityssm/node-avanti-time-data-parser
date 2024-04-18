@@ -1,4 +1,4 @@
-export const dateColumnRegularExpression = /^\w{3} \d/;
+const dateColumnRegularExpression = /^\w{3} \d/;
 const monthNumbers = {
     Jan: '01',
     Feb: '02',
@@ -14,8 +14,16 @@ const monthNumbers = {
     Dec: '12'
 };
 /**
+ * Tests if a column name is a date column.
+ * @param {string} columnName - A column name
+ * @returns {boolean} - True when the column name is a date column.
+ */
+export function isDateColumn(columnName) {
+    return dateColumnRegularExpression.test(columnName);
+}
+/**
  * Formats a date column name.
- * @param {string} columnName - ex. 'Tue 16-Jan-2024'
+ * @param {DateColumn} columnName - ex. 'Tue 16-Jan-2024'
  * @returns {TimeDataDateString} ex. '2024/01/16'
  */
 export function formatDate(columnName) {
