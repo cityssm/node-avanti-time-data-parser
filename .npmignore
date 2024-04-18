@@ -1,9 +1,7 @@
 .git
 .github
-.nyc_output
 coverage
 docs
-lib
 node_modules
 test
 

@@ -8,8 +8,8 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "test": "mocha --timeout 60000",
-    "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary mocha --timeout 60000 --exit"
+    "test": "node --test",
+    "coverage": "c8 --reporter=lcov --reporter=text --reporter=text-summary node --test"
   },
   "repository": {
     "type": "git",
@@ -29,11 +29,10 @@
   },
   "homepage": "https://github.com/cityssm/node-avanti-time-data-parser#readme",
   "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.11",
-    "eslint-config-cityssm": "^1.4.0"
+    "@types/node": "^20.12.7",
+    "eslint-config-cityssm": "^1.7.0"
   },
   "dependencies": {
-    "xlsx": "https://github.com/cityssm/node-avanti-time-data-parser/raw/main/lib/xlsx-0.20.1.tgz"
+    "xlsx": "file:lib/xlsx-0.20.2.tgz"
   }
 }
