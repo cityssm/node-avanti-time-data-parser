@@ -11,7 +11,7 @@ import type {
   TimeDataEmployee,
   TimeDataPayCode
 } from './types.js'
-import { dateColumnRegularExpression, formatDate, isDateColumn } from './utilities.js'
+import { formatDate, isDateColumn } from './utilities.js'
 import type { WorkSheetRow } from './workSheetTypes.js'
 
 XLSX.set_fs(fs)
