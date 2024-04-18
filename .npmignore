@@ -2,6 +2,7 @@
 .github
 coverage
 docs
+lib
 node_modules
 test
 

@@ -1,6 +1,6 @@
 {
   "name": "@cityssm/avanti-time-data-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Parses the time data Excel report from Avanti into a JavaScript object.",
   "exports": "./index.js",
@@ -33,6 +33,6 @@
     "eslint-config-cityssm": "^1.7.0"
   },
   "dependencies": {
-    "xlsx": "file:lib/xlsx-0.20.2.tgz"
+    "xlsx": "https://github.com/cityssm/node-avanti-time-data-parser/raw/main/lib/xlsx-0.20.2.tgz"
   }
 }
